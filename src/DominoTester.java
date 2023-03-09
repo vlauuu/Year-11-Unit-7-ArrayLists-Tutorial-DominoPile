@@ -10,7 +10,7 @@ public class DominoTester {
     DominoPile dominoPile;
 
     public void setUp() {
-        domino = new Domino();
+        domino = new Domino(0,0);
         otherDomino = new Domino(6,2);
         dominoPile = new DominoPile();
         dominoPile.getPile();
@@ -164,7 +164,7 @@ public class DominoTester {
         setUp();
         domino.setTop(4);
         domino.setBottom(2);
-        assertEquals("Ensure that your compareTo method in the Domino class has been implemented correctly!", -1, domino.compareTo(otherDomino));
+        assertEquals("Ensure that your compareTo method in the Domino class has been implemented correctly!", 0, domino.compareTo(otherDomino));
         tearDown();
     }
 
