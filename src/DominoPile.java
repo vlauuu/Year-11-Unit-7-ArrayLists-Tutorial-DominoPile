@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class DominoPile {
 
-    private ArrayList<Domino> pile = new ArrayList<Domino>();
+    private ArrayList<Domino> pile = new ArrayList<>();
 
     public DominoPile() {
 
@@ -30,26 +30,25 @@ public class DominoPile {
                 }
                 else
                 {
-                    System.out.println(pile);
+                    boolean add = true;
                     for (Domino domino : pile)
                     {
-                        int currTop = domino.getTop();
-                        int currBottom = domino.getBottom();
-                        System.out.println(currTop);
-                        System.out.println(currBottom);
-                        if (i == currTop && k == currBottom) {
-
-                        } else if (k == currTop && i == currBottom) {
-
-                        } else {
-                            Domino newDom = new Domino(k, i);
-//                            pile.add(newDom);
+                        if ((i == domino.getTop() && k == domino.getBottom()) || (k == domino.getTop() && i == domino.getBottom()))
+                        {
+                            add = false;
                         }
+                    }
+
+                    if(add)
+                    {
+                        Domino newDom = new Domino(k, i);
+                        pile.add(newDom);
+//                        System.out.println(newDom.getTop() + ", " + newDom.getBottom() );
                     }
                 }
             }
         }
-        System.out.println(pile.size());
+//        System.out.println(pile.size());
     }
 
     public void shuffle()
