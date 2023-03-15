@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class DominoPile {
 
@@ -33,9 +34,9 @@ public class DominoPile {
                     boolean add = true;
                     for (Domino domino : pile)
                     {
-                        if ((i == domino.getTop() && k == domino.getBottom()) || (k == domino.getTop() && i == domino.getBottom()))
-                        {
+                        if ((i == domino.getTop() && k == domino.getBottom()) || (k == domino.getTop() && i == domino.getBottom())) {
                             add = false;
+                            break;
                         }
                     }
 
@@ -53,7 +54,7 @@ public class DominoPile {
 
     public void shuffle()
     {
-
+        Collections.shuffle(pile);
     }
 
 }
